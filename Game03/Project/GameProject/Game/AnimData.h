@@ -40,3 +40,4 @@ extern TexAnimData effect_blood_anim_data[];
 extern TexAnimData effect_smoke_anim_data[];
 extern TexAnimData effect_slash_anim_data[];
 extern TexAnimData effect_bomb_anim_data[];
+extern TexAnimData Title_anim_data[];

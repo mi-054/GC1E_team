@@ -431,3 +431,12 @@ static TexAnim _effect_slash[] = {
 TexAnimData effect_slash_anim_data[] = {
 	ANIMDATA(_effect_slash),
 };
+static TexAnim _Title[] = {
+	{0,30},
+	{1,30},
+	{2,30},
+	{3,30},
+};
+TexAnimData Title_anim_data[] = {
+	ANIMDATA(_Title),
+};
