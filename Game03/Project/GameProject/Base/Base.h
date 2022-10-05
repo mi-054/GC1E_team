@@ -14,6 +14,7 @@ enum {	// —ñ‹“Œ^
 	eType_Effect,
 	eType_UI,
 	eType_Scene,
+	eType_Hametu,
 };
 
 class Base {

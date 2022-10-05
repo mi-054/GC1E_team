@@ -9,6 +9,8 @@
 #include "Game/Enemy.h"
 #include "Game/Field.h"
 #include "Title/Title.h"
+#include "Game/UI.h"
+#include"Game/Hametu.h"
 
 //#include "Title/Title.h"
 
@@ -78,7 +80,8 @@ void Init(void)
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png", effect_blood_anim_data, 128, 128));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title6.png",Title_anim_data,1280,720));
-
+	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
+	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
 	// ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	//Base::Add(new Player(CVector2D(200, 500), false));
 	// ìGÇÃê∂ê¨
