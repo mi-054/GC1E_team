@@ -90,7 +90,7 @@ void Init(void)
 	//Base::Add(new Field());
 
 	Base::Add(new Title());
-	
+	//Base::Add(new UI());
 
 	/*
 	//‰æ‘œ‚Ì–‘O“Ç‚İ‚İ
