@@ -5,7 +5,7 @@
 UI::UI():Base(eType_UI)
 {
 	m_img.Load("Image/UI.png");
-	time = 120*60;
+	time = 60*60;
 }
 
 void UI::Draw()
@@ -13,7 +13,9 @@ void UI::Draw()
 	time -= 1;
 	
 	int t = time / 60;
-	
+	if (time == 60 * 60) {
+		Base::Add(new Hametu());
+	}
 	for (int i = 0; i < 8; i++, t /=10) {
 		int s = t%10;
 		m_img.SetRect(16 * s, 16, 16 * s+16, 32);
@@ -21,9 +23,7 @@ void UI::Draw()
 		m_img.SetPos(200 - 16*i , 0);
 		m_img.Draw();
 	}
-	if (time == 60 * 60) {
-		Base::Add(new Hametu());
-	}
+	
 	
 	Base* Goal = Base::FindObject(eType_Goal);
 	Base* player = Base::FindObject(eType_Player);
