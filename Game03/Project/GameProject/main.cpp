@@ -88,7 +88,7 @@ void Init(void)
 	// フィールドの生成
 	//Base::Add(new Field());
 
-	//Base::Add(new Title());
+	
 	/*
 	//画像の事前読み込み
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title.png"));

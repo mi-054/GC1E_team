@@ -10,6 +10,7 @@
 
 Game::Game():Base(eType_Scene)
 {
+	
 	//Base::Add(new Map());
 	
 	Base::Add(new Field());
@@ -36,12 +37,18 @@ void Game::Update()
 {
 	//ゴールが無ければゲームシーン終了
 	if (!Base::FindObject(eType_Goal)) {
+		if(++t2>=180)
 		SetKill();
 	}
 
 	
 	//プレイヤー死亡　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
+		if (++t2 >= 180)
+		SetKill();
+	}
+
+	if (time==0) {
 		SetKill();
 	}
 }
