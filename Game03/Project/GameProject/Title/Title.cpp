@@ -1,6 +1,7 @@
 #include "Title.h"
 #include "../Game/Game.h"
 #include "../Game/AnimData.h"
+#include"Play.h"
 
 Title::Title() :Base(eType_Scene),m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 60), m_title2_text("C:\\Windows\\Fonts\\msgothic.ttc", 32)
 {
@@ -14,7 +15,7 @@ Title::~Title()
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	//ゲームシーンへ
-	Base::Add(new Game());
+	Base::Add(new Play());
 }
 
 

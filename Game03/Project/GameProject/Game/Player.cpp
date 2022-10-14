@@ -3,7 +3,6 @@
 #include "Field.h"
 #include "Slash.h"
 #include "Effect.h"
-#include "Map.h"
 
 void Player::StateIdle()
 {
@@ -224,7 +223,7 @@ void Player::Collision(Base* b)
 				m_vec.y = 0;
 				m_is_ground = true;
 			}
-		}*/
-		break;
+		}
+		break;*/
 	}
 }

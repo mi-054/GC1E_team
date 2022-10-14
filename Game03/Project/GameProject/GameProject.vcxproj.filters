@@ -32,11 +32,17 @@
     <ClCompile Include="Game\Goal.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Map.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Boy.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\UI.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Hametu.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Play.cpp">
+      <Filter>Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,11 +87,17 @@
     <ClInclude Include="Game\Goal.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Map.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Boy.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\UI.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Hametu.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Play.h">
+      <Filter>Title</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,6 +5,7 @@
 class Game : public Base {
 public:
 	int t2 = 0;
+	int t4 = 0;
 	Game();
 	~Game();
 	void Update();

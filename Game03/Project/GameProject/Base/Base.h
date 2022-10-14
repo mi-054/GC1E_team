@@ -12,9 +12,9 @@ enum {	// —ñ‹“Œ^
 	eType_Player_Attack,
 	eType_Enemy_Attack,
 	eType_Effect,
-	//eType_UI,
+	eType_UI,
 	eType_Scene,
-	//eType_Hametu,
+	eType_Hametu,
 };
 
 class Base {

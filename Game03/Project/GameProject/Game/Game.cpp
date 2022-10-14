@@ -4,9 +4,9 @@
 #include "Enemy.h"
 #include "../Title/Title.h"
 #include "Goal.h"
-#include "Map.h"
-//#include"UI.h"
-//#include"Hametu.h"
+#include"Boy.h"
+#include"UI.h"
+#include"Hametu.h"
 
 Game::Game():Base(eType_Scene)
 {
@@ -20,8 +20,8 @@ Game::Game():Base(eType_Scene)
 	Base::Add(new Enemy(CVector2D(1280 + 256 * 3, 540), true));
 	Base::Add(new Goal(CVector2D(2048, 540 - 32)));
 
-	//Base::Add(new UI());
-	//Base::Add(new Hametu());
+	Base::Add(new UI());
+	
 
 }
 
@@ -37,18 +37,18 @@ void Game::Update()
 {
 	//ゴールが無ければゲームシーン終了
 	if (!Base::FindObject(eType_Goal)) {
-		if(++t2>=180)
+		if(++t4>=180)
 		SetKill();
 	}
 
 	
 	//プレイヤー死亡　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
-		if (++t2 >= 180)
+		if (++t4 >= 180)
 		SetKill();
 	}
 
-	if (time==0) {
+	if (++t2==123*60) {
 		SetKill();
 	}
 }

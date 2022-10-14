@@ -5,7 +5,7 @@
 UI::UI():Base(eType_UI)
 {
 	m_img.Load("Image/UI.png");
-	time = 120*60;
+	time = 121*60;
 }
 
 void UI::Draw()
@@ -13,7 +13,7 @@ void UI::Draw()
 	time -= 1;
 	
 	int t = time / 60;
-	if (time == 60 * 60) {
+	if (time == 61 * 60) {
 		Base::Add(new Hametu());
 	}
 	for (int i = 0; i < 8; i++, t /=10) {
@@ -45,11 +45,14 @@ void UI::Draw()
 		m_img.SetPos(570, 340);
 		m_img.Draw();
 	}
-	else if (time == 0) {
-		m_img.SetRect(0, 64, 0 + 160, 64 + 32);
+	else if (time <=1*60) 
+		//if(++t3>=30)
+	{
+		m_img.SetRect(0, 96, 0 + 160, 96 + 32);
 		m_img.SetSize(160, 32);
 		m_img.SetPos(570, 340);
 		m_img.Draw();
+		
 
 
 
