@@ -7,6 +7,7 @@
 #include"Boy.h"
 #include"UI.h"
 #include"Hametu.h"
+#include"GameData.h"
 
 Game::Game():Base(eType_Scene)
 {

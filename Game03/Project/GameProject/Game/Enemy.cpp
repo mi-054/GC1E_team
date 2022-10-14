@@ -4,6 +4,8 @@
 #include "Slash.h"
 #include "Effect.h"
 #include "Map.h"
+#include"GameData.h"
+#include"UI.h"
 
 
 void Enemy::StateIdle()
@@ -105,6 +107,7 @@ void Enemy::StateDown()
 	if (m_img.CheckAnimationEnd()) {
 		Base::Add(new Effect("Effect_Smoke", m_pos + CVector2D(0, 0), m_flip));
 		m_kill = true;
+		GameData::s_score += 100;
 	}
 }
 

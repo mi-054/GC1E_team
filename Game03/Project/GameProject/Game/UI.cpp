@@ -1,6 +1,7 @@
 #include "UI.h"
 #include"Hametu.h"
 #include"Goal.h"
+#include"GameData.h"
 
 UI::UI():Base(eType_UI)
 {
@@ -10,6 +11,14 @@ UI::UI():Base(eType_UI)
 
 void UI::Draw()
 {
+	int score = GameData::s_score;
+	for (int j = 0; j < 8; j++, score /= 10) {
+		int q = score % 10;
+		m_img.SetRect(16 * q, 16, 16 * q + 16, 32);
+		m_img.SetSize(16, 16);
+		m_img.SetPos(1080 - 16 * j, 0);
+		m_img.Draw();
+	}
 	time -= 1;
 	
 	int t = time / 60;

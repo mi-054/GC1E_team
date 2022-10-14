@@ -84,7 +84,7 @@ void Init(void)
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title6.png",Title_anim_data,1280,720));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
-	ADD_RESOURCE("Play", CImage::CreateImage("Image/ヌマ操作.png"));
+	ADD_RESOURCE("Play", CImage::CreateImage("Image/仮３.png"));
 	// プレイヤーの生成
 	//Base::Add(new Player(CVector2D(200, 500), false));
 	// 敵の生成

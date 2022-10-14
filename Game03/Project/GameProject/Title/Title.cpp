@@ -2,6 +2,7 @@
 #include "../Game/Game.h"
 #include "../Game/AnimData.h"
 #include"Play.h"
+#include"../Game/GameData.h"
 
 Title::Title() :Base(eType_Scene),m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 60), m_title2_text("C:\\Windows\\Fonts\\msgothic.ttc", 32)
 {
@@ -28,6 +29,7 @@ void Title::Update()
 	// ボタン1でタイトル破棄
 	if (PUSH(CInput::eButton1)) {
 		SetKill();
+		GameData::s_score = 0;
 	}
 	//アニメーション終了チェック
 	if (m_img.CheckAnimationEnd());

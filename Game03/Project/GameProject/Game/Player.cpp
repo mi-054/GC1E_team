@@ -4,10 +4,11 @@
 #include "Slash.h"
 #include "Effect.h"
 
+
 void Player::StateIdle()
 {
 	// ˆÚ“®—Ê
-	const float move_speed = 6;
+	const float move_speed =6;
 	// ˆÚ“®ƒtƒ‰ƒO
 	bool move_flag = false;
 	
