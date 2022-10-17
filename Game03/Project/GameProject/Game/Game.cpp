@@ -49,7 +49,7 @@ void Game::Update()
 		SetKill();
 	}
 
-	if (++t2==123*60) {
+	if (++t2==122*60) {
 		SetKill();
 	}
 }
