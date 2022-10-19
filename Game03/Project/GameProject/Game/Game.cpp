@@ -9,8 +9,8 @@
 #include"Hametu.h"
 #include"GameData.h"
 #include"RBoy.h"
-#include"../Title/GameOver.h"
-#include"../Title/Gameclear.h"
+//#include"../Title/GameOver.h"
+//#include"../Title/Gameclear.h"
 
 Game::Game():Base(eType_Scene)
 {

@@ -70,9 +70,9 @@ void Init(void)
 	//-----------------------------------------------------
 	
 	// âÊëúÇÃì«Ç›çûÇ›Ç∆ìoò^
-	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 256, 256));
-	ADD_RESOURCE("Boy", CImage::CreateImage("Image/Boy1.png", enemy_anim_data, 32, 32));
-	ADD_RESOURCE("RBoy", CImage::CreateImage("Image/RBoyÇP.png", enemy_anim_data, 32, 32));
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player1.png", player_anim_data, 120, 120));
+	ADD_RESOURCE("Boy", CImage::CreateImage("Image/Boy1.png", enemy_anim_data, 120, 120));
+	ADD_RESOURCE("RBoy", CImage::CreateImage("Image/RBoy1.png", enemy_anim_data, 120, 120));
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/haikei.png"));
 	//ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
