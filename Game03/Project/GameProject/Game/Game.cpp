@@ -34,6 +34,8 @@ Game::Game():Base(eType_Scene)
 
 Game::~Game()
 {
+	SOUND("BGM_Game")->Stop();
+	SOUND("BGM_Title")->Play(true);
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	//タイトルシーンへ

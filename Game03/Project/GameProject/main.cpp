@@ -86,6 +86,9 @@ void Init(void)
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/‰¼‚R.png"));
+	SOUND("BGM_Title")->Load("Sound/BGM/bouken1.wav");
+	SOUND("BGM_Game")->Load("Sound/BGM/bouken2.wav");
+	SOUND("BGM_Title")->Play(true);
 	//ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
 	//ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear.png"));
 	// ƒvƒŒƒCƒ„[‚Ì¶¬
