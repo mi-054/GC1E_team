@@ -1,19 +1,19 @@
-#include "RBoy.h"
+#include "Boss.h"
 #include "AnimData.h"
 #include "Field.h"
 #include "Effect.h"
 #include "Map.h"
 #include "Slash.h"
 
-void RBoy::StateIdle()
+void Boss::StateIdle()
 {
-	
+
 	const float move_speed = 2;
-	
+
 	bool move_flag = false;
 
 	//const float jump_pow = 12;
-	
+
 	Base* player = Base::FindObject(eType_Player);
 
 	if (player) {
@@ -36,9 +36,9 @@ void RBoy::StateIdle()
 	}
 }
 
-RBoy::RBoy(const CVector2D& p, bool flip) :Base(eType_RBoy)
+Boss::Boss(const CVector2D& p, bool flip) :Base(eType_Boss)
 {
-	m_img = COPY_RESOURCE("RBoy", CImage);
+	m_img = COPY_RESOURCE("Boss", CImage);
 
 	m_img.ChangeAnimation(0);
 
@@ -52,10 +52,10 @@ RBoy::RBoy(const CVector2D& p, bool flip) :Base(eType_RBoy)
 
 	m_flip = flip;
 
-	m_hp = 150;
+	m_hp = 250;	// 5‰ñ
 	m_cnt = 300;
 }
-void RBoy::Update()
+void Boss::Update()
 {
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
@@ -65,7 +65,7 @@ void RBoy::Update()
 	m_img.UpdateAnimation();
 
 }
-void RBoy::Draw() {
+void Boss::Draw() {
 	m_img.SetPos(GetScreenPos(m_pos));
 
 	m_img.SetFlipH(m_flip);
@@ -77,7 +77,7 @@ void RBoy::Draw() {
 	DrawRect();
 }
 
-void RBoy::Collision(Base* b)
+void Boss::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Player_Attack:

@@ -37,7 +37,7 @@ void Player::StateIdle()
 	if (m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
-		//jamp_flag = true;
+		jamp_flag = true;
 	}
 	// 攻撃
 	if (PUSH(CInput::eButton1)) {
@@ -167,6 +167,8 @@ void Player::Draw()
 	m_img.SetPos(GetScreenPos(m_pos));
 	// 反転設定
 	m_img.SetFlipH(m_flip);
+	// 画像サイズ
+	m_img.SetSize(128, 128);
 	// 描画
 	m_img.Draw();
 	// 当たり判定矩形の表示

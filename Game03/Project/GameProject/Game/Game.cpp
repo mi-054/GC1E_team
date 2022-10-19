@@ -9,6 +9,7 @@
 #include"Hametu.h"
 #include"GameData.h"
 #include"RBoy.h"
+#include"Boss.h"
 //#include"../Title/GameOver.h"
 //#include"../Title/Gameclear.h"
 
@@ -25,6 +26,7 @@ Game::Game():Base(eType_Scene)
 	Base::Add(new RBoy(CVector2D(1000 + 400 * 1, 540), false));
 	Base::Add(new RBoy(CVector2D(1000 + 400 * 2, 540), false));
 	Base::Add(new RBoy(CVector2D(1000 + 400 * 3, 540), false));
+	Base::Add(new Boss(CVector2D(1000 + 400 * 5, 540), false));
 
 	Base::Add(new Goal(CVector2D(2048, 540 - 32)));
 	Base::Add(new UI());

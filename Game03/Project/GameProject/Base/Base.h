@@ -9,6 +9,7 @@ enum {	// —ñ‹“Œ^
 	eType_Enemy,
 	eType_Boy,
 	eType_RBoy,
+	eType_Boss,
 	eType_Bullet,
 	eType_Goal,
 	eType_Player_Attack,
