@@ -2,6 +2,8 @@
 #include"Hametu.h"
 #include"Goal.h"
 #include"GameData.h"
+#include"../Title/GameOver.h"
+#include"../Title/GameClear.h"
 
 UI::UI():Base(eType_UI)
 {

@@ -8,6 +8,9 @@
 #include"UI.h"
 #include"Hametu.h"
 #include"GameData.h"
+#include"RBoy.h"
+#include"../Title/GameOver.h"
+#include"../Title/Gameclear.h"
 
 Game::Game():Base(eType_Scene)
 {
@@ -16,11 +19,14 @@ Game::Game():Base(eType_Scene)
 	
 	Base::Add(new Field());
 	Base::Add(new Player(CVector2D(1080, 600), false));
-	Base::Add(new Enemy(CVector2D(1280 + 256 * 1, 540), true));
-	Base::Add(new Enemy(CVector2D(1280 + 256 * 2, 540), true));
-	Base::Add(new Enemy(CVector2D(1280 + 256 * 3, 540), true));
-	Base::Add(new Goal(CVector2D(2048, 540 - 32)));
+	Base::Add(new Boy(CVector2D(900 + 400 * 1, 540), false));
+	Base::Add(new Boy(CVector2D(900 + 400 * 2, 540), false));
+	Base::Add(new Boy(CVector2D(900 + 400 * 3, 540), false));
+	Base::Add(new RBoy(CVector2D(1000 + 400 * 1, 540), false));
+	Base::Add(new RBoy(CVector2D(1000 + 400 * 2, 540), false));
+	Base::Add(new RBoy(CVector2D(1000 + 400 * 3, 540), false));
 
+	Base::Add(new Goal(CVector2D(2048, 540 - 32)));
 	Base::Add(new UI());
 	
 
@@ -38,19 +44,19 @@ void Game::Update()
 {
 	//ゴールが無ければゲームシーン終了
 	if (!Base::FindObject(eType_Goal)) {
-		if(++t4>=180)
-		SetKill();
+
+		//Base::Add(new GameClear);
+		//return 
 	}
 
 	
 	//プレイヤー死亡　ボタン１でゲームシーン終了
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
-		if (++t4 >= 180)
-		SetKill();
+		//Base::Add(new GameOver);
 	}
 
 	if (++t2==122*60) {
-		SetKill();
+		//Base::Add(new GameOver);
 	}
 }
 

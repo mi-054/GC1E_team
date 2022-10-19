@@ -1,17 +1,19 @@
-#include "Boy.h"
+#include "RBoy.h"
 #include "AnimData.h"
 #include "Field.h"
 #include "Effect.h"
 #include "Map.h"
 #include "Slash.h"
 
-void Boy::StateIdle()
+void RBoy::StateIdle()
 {
-	// 移動量
-	const float move_speed = 1;
-	// 移動フラグ
+	
+	const float move_speed = 2;
+	
 	bool move_flag = false;
-	// プレイヤーを検索
+
+	//const float jump_pow = 12;
+	
 	Base* player = Base::FindObject(eType_Player);
 
 	if (player) {
@@ -34,9 +36,9 @@ void Boy::StateIdle()
 	}
 }
 
-Boy::Boy(const CVector2D& p, bool flip):Base(eType_Boy) 
+RBoy::RBoy(const CVector2D& p, bool flip) :Base(eType_RBoy)
 {
-    m_img = COPY_RESOURCE("Boy", CImage);
+	m_img = COPY_RESOURCE("RBoy", CImage);
 
 	m_img.ChangeAnimation(0);
 
@@ -50,10 +52,10 @@ Boy::Boy(const CVector2D& p, bool flip):Base(eType_Boy)
 
 	m_flip = flip;
 
-	m_hp = 100;
+	m_hp = 200;
 	m_cnt = 300;
 }
-void Boy::Update() 
+void RBoy::Update()
 {
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
@@ -63,19 +65,19 @@ void Boy::Update()
 	m_img.UpdateAnimation();
 
 }
-void Boy::Draw() {
+void RBoy::Draw() {
 	m_img.SetPos(GetScreenPos(m_pos));
 
 	m_img.SetFlipH(m_flip);
 
-	m_img.SetSize(128,128);
+	m_img.SetSize(128, 128);
 
 	m_img.Draw();
 
 	DrawRect();
 }
-	
-void Boy::Collision(Base* b)
+
+void RBoy::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Player_Attack:

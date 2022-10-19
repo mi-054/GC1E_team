@@ -7,6 +7,8 @@ enum {	// —ñ‹“Œ^
 	eType_Field,
 	eType_Player,
 	eType_Enemy,
+	eType_Boy,
+	eType_RBoy,
 	eType_Bullet,
 	eType_Goal,
 	eType_Player_Attack,

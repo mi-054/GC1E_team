@@ -1,14 +1,14 @@
 #pragma once
 #include "../Base/Base.h"
 
-class Boy :public Base {
+class RBoy :public Base {
 private:
 	enum {
 		eState_Idle,
 	};
 	int m_state;
 	int m_cnt;
-	
+
 	CImage m_img;
 	bool m_flip;
 	bool m_is_ground;
@@ -18,7 +18,7 @@ private:
 	void StateIdle();
 
 public:
-	Boy::Boy(const CVector2D& p, bool flip);
+	RBoy::RBoy(const CVector2D& p, bool flip);
 	void Update();
 	void Draw();
 	void Collision(Base* b);

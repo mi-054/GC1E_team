@@ -71,7 +71,8 @@ void Init(void)
 	
 	// âÊëúÇÃì«Ç›çûÇ›Ç∆ìoò^
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", player_anim_data, 256, 256));
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Boy1.png", enemy_anim_data, 32, 32));
+	ADD_RESOURCE("Boy", CImage::CreateImage("Image/Boy1.png", enemy_anim_data, 32, 32));
+	ADD_RESOURCE("RBoy", CImage::CreateImage("Image/RBoyÇP.png", enemy_anim_data, 32, 32));
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/haikei.png"));
 	//ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
@@ -85,6 +86,8 @@ void Init(void)
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/âºÇR.png"));
+	//ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
+	//ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear.png"));
 	// ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	//Base::Add(new Player(CVector2D(200, 500), false));
 	// ìGÇÃê∂ê¨
