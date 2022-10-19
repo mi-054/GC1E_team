@@ -36,7 +36,7 @@ void UI::Draw()
 	}
 	
 	
-	Base* Goal = Base::FindObject(eType_Goal);
+	/*Base* Goal = Base::FindObject(eType_Goal);
 	Base* player = Base::FindObject(eType_Player);
 
 	if (player == nullptr) {
@@ -67,5 +67,5 @@ void UI::Draw()
 
 
 
-	}
+	}*/
 }

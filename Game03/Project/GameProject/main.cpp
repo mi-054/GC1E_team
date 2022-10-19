@@ -88,6 +88,8 @@ void Init(void)
 	ADD_RESOURCE("Play", CImage::CreateImage("Image/âºÇR.png"));
 	//ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
 	//ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear.png"));
+	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over2.png"));
+	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear2.png"));
 	// ÉvÉåÉCÉÑÅ[ÇÃê∂ê¨
 	//Base::Add(new Player(CVector2D(200, 500), false));
 	// ìGÇÃê∂ê¨

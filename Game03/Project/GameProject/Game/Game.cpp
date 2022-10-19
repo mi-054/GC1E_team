@@ -38,25 +38,44 @@ Game::~Game()
 	Base::KillAll();
 	//タイトルシーンへ
 	Base::Add(new Title());
+	
 }
 
 void Game::Update()
 {
 	//ゴールが無ければゲームシーン終了
 	if (!Base::FindObject(eType_Goal)) {
-
-		//Base::Add(new GameClear);
-		//return 
+		if (GameClear_flag == false) {
+			//一度だけ呼び出す
+			Base::Add(new GameClear);
+		}
+		if (PUSH(CInput::eButton1))
+			SetKill();
+		GameClear_flag == true;
 	}
-
+	//リセットされる（タイトルに行くと）
 	
 	//プレイヤー死亡　ボタン１でゲームシーン終了
-	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
-		//Base::Add(new GameOver);
+
+	else if (!Base::FindObject(eType_Player)) {
+		if (GameOver_flag == false) {
+			Base::Add(new GameOver);
+		}
+		if (PUSH(CInput::eButton1))
+			SetKill();
+		GameOver_flag == true;
+
 	}
 
-	if (++t2==122*60) {
-		//Base::Add(new GameOver);
+	else if (++t2 == 120 * 60) {
+		//120秒後に一度だけ呼び出し
+		Base::Add(new GameOver);
 	}
+	//121秒以降有効
+	else if (t2>=121*60&&(PUSH(CInput::eButton1))){
+			SetKill();
+
+	}
+	//タイトルに戻るとリセットされる
 }
 

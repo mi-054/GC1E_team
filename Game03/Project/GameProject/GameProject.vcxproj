@@ -26,6 +26,8 @@
     <ClCompile Include="Game\Slash.cpp" />
     <ClCompile Include="Game\UI.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Title\GameClear.cpp" />
+    <ClCompile Include="Title\GameOver.cpp" />
     <ClCompile Include="Title\Play.cpp" />
     <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
@@ -44,6 +46,8 @@
     <ClInclude Include="Game\RBoy.h" />
     <ClInclude Include="Game\Slash.h" />
     <ClInclude Include="Game\UI.h" />
+    <ClInclude Include="Title\GameClear.h" />
+    <ClInclude Include="Title\GameOver.h" />
     <ClInclude Include="Title\Play.h" />
     <ClInclude Include="Title\Title.h" />
   </ItemGroup>
