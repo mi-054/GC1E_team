@@ -106,9 +106,9 @@ Player::Player(const CVector2D& p, bool flip):Base(eType_Player)
 	//m_pos_old = 
 	m_pos = p;
 	// 中心位置設定
-	m_img.SetCenter(128, 224);
-	// 当たり判定用短形設定
-	m_rect = CRect(-32, -128, 32, 0);
+	m_img.SetCenter(64, 128);
+	// 当たり判定短形
+	m_rect = CRect(-54, -128, 54, 0);
 	// 反転フラグ
 	m_flip = flip;
 	// 通常状態へ

@@ -9,8 +9,8 @@
 #include"Hametu.h"
 #include"GameData.h"
 #include"RBoy.h"
-#include"../Title/GameOver.h"
-#include"../Title/Gameclear.h"
+//#include"../Title/GameOver.h"
+//#include"../Title/Gameclear.h"
 
 Game::Game():Base(eType_Scene)
 {
@@ -34,6 +34,8 @@ Game::Game():Base(eType_Scene)
 
 Game::~Game()
 {
+	SOUND("BGM_Game")->Stop();
+	SOUND("BGM_Title")->Play(true);
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	//タイトルシーンへ
