@@ -349,3 +349,11 @@ static TexAnim _Title[] = {
 TexAnimData Title_anim_data[] = {
 	ANIMDATA(_Title),
 };
+static TexAnim _Goal[] = {
+	{0,3},
+	{1,3},
+	{2,3},
+};
+TexAnimData Goal_anim_data[] = {
+	ANIMDATA(_Goal),
+};

@@ -13,6 +13,7 @@
 #include"Game/Hametu.h"
 #include"Title/Play.h"
 #include"Title/Teki.h"
+#include"Game/Goal.h"
 
 //#include "Title/Title.h"
 
@@ -83,7 +84,7 @@ void Init(void)
 	ADD_RESOURCE("Effect_Slash", CImage::CreateImage("Image/Effect_Slash.png",effect_slash_anim_data,128,128));
 	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png", effect_smoke_anim_data, 128, 128));
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png", effect_blood_anim_data, 128, 128));
-	ADD_RESOURCE("Goal", CImage::CreateImage("Image/Goal.png"));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/ÉSÅ[Éã.png",Goal_anim_data,32,64));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title6.png",Title_anim_data,1280,720));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
@@ -92,6 +93,7 @@ void Init(void)
 	SOUND("BGM_Title")->Load("Sound/BGM/bouken1.wav");
 	SOUND("BGM_Game")->Load("Sound/BGM/bouken2.wav");
 	SOUND("BGM_Title")->Play(true);
+	SOUND("SE_íçà”")->Load("SOUND/SE/íçà”.wav");
 	//ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
 	//ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear.png"));
 	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over2.png"));

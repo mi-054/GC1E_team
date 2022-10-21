@@ -12,6 +12,14 @@ Goal::Goal(const CVector2D& pos) :Base(eType_Goal) {
 	
 }
 
+void Goal::Updata()
+{
+	m_img.ChangeAnimation(eState_Goal);
+	//アニメーション更新
+	m_img.UpdateAnimation();
+	//アニメーション終了チェック
+	if (m_img.CheckAnimationEnd());
+}
 void Goal::Draw() {
 	// 位置設定
 	m_img.SetPos(GetScreenPos(m_pos));
