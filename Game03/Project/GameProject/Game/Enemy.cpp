@@ -98,6 +98,7 @@ void Enemy::StateDamage()
 	m_img.ChangeAnimation(eAnimDamage, false);
 	if (m_img.CheckAnimationEnd()) {
 		m_state = eState_Idle;
+
 	}
 }
 

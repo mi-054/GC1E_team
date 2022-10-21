@@ -211,16 +211,10 @@ static TexAnim enemyAttack03End[] = {
 	{ 0,0 },
 };
 static TexAnim enemyDamage[] = {
-	{ 88,2 },
-	{ 89,2 },
-	{ 90,2 },
-	{ 91,2 },
+	{ 4,2 },
 };
 static TexAnim enemyDamageEnd[] = {
-	{ 92,2 },
-	{ 93,2 },
-	{ 94,2 },
-	{ 95,2 },
+	{ 4,2 },
 };
 static TexAnim enemyDeath[] = {
 	{ 96,4 },
