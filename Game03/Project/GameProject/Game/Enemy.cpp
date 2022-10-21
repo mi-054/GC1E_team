@@ -27,11 +27,7 @@ void Enemy::StateIdle()
 			//反転フラグ
 			m_flip = true;
 			move_flag = true;
-		}/* else {
-			// 攻撃状態へ移行
-			m_state = eState_Attack;
-			m_attack_no++;	// 攻撃する度に1増える
-		}*/
+		}else 
 		//右移動
 		if (player->m_pos.x > m_pos.x + 64) {
 			//移動量を設定
@@ -39,11 +35,11 @@ void Enemy::StateIdle()
 			//反転フラグ
 			m_flip = false;
 			move_flag = true;
-		}/* else {
+		} else {
 			// 攻撃状態へ移行
 			m_state = eState_Attack;
-			m_attack_no++;	// 攻撃する度に1増える
-		}*/
+			//m_attack_no++;	// 攻撃する度に1増える
+		}
 		if (move_flag) {
 			//走るアニメーション
 			m_img.ChangeAnimation(eAnimRun);
@@ -51,13 +47,12 @@ void Enemy::StateIdle()
 		else {
 			//待機アニメーション
 			m_img.ChangeAnimation(eAnimIdle);
-		}
-
-		// カウント0で待機状態へ
-		if (--m_cnt <= 0) {
-			// 待機時間3秒～5秒
-			m_cnt = rand() % 120 + 180;
-			m_state = eState_Wait;
+			// カウント0で待機状態へ
+			if (--m_cnt <= 0) {
+				// 待機時間3秒～5秒
+				m_cnt = rand() % 120 + 180;
+				m_state = eState_Wait;
+			}
 		}
 	}
 }
@@ -86,19 +81,22 @@ void Enemy::StateAttack()
 		}
 	}
 
-	// アニメーションが終了したら
+	//アニメーションが終了したら
 	if (m_img.CheckAnimationEnd()) {
-		// 通常状態へ移行
-		m_state = eState_Idle;
+		//通常状態へ移行
+		m_state = eState_Wait;
+		m_cnt = rand() % 60 + 120;
 	}
 }
 
 void Enemy::StateDamage()
 {
+	//ダメージアニメーションへ変更
 	m_img.ChangeAnimation(eAnimDamage, false);
+	//アニメーションが終了したら
 	if (m_img.CheckAnimationEnd()) {
+		//通常状態へ移行
 		m_state = eState_Idle;
-
 	}
 }
 
