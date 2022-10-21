@@ -4,6 +4,8 @@
 #include "Effect.h"
 #include "Map.h"
 #include "Slash.h"
+#include"GameData.h"
+#include"Game.h"
 
 void RBoy::StateIdle()
 {
@@ -52,7 +54,7 @@ RBoy::RBoy(const CVector2D& p, bool flip) :Base(eType_RBoy)
 
 	m_flip = flip;
 
-	m_hp = 200;
+	m_hp = 150;
 	m_cnt = 300;
 }
 void RBoy::Update()
@@ -89,6 +91,7 @@ void RBoy::Collision(Base* b)
 				m_hp -= 50;
 				if (m_hp <= 0) {
 					SetKill();
+					GameData::s_score += 100;
 				}
 			}
 		}

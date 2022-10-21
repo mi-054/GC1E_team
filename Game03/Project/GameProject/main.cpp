@@ -12,6 +12,7 @@
 #include "Game/UI.h"
 #include"Game/Hametu.h"
 #include"Title/Play.h"
+#include"Title/Teki.h"
 
 //#include "Title/Title.h"
 
@@ -73,6 +74,7 @@ void Init(void)
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player1.png", player_anim_data, 120, 120));
 	ADD_RESOURCE("Boy", CImage::CreateImage("Image/Boy1.png", enemy_anim_data, 120, 120));
 	ADD_RESOURCE("RBoy", CImage::CreateImage("Image/RBoy1.png", enemy_anim_data, 120, 120));
+	ADD_RESOURCE("Boss", CImage::CreateImage("Image/Boss.png", enemy_anim_data, 120, 120));
 	ADD_RESOURCE("Sky", CImage::CreateImage("Image/Sky.png"));
 	ADD_RESOURCE("Town", CImage::CreateImage("Image/haikei.png"));
 	//ADD_RESOURCE("MapTip", CImage::CreateImage("Image/MapTip.png"));
@@ -85,7 +87,8 @@ void Init(void)
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title6.png",Title_anim_data,1280,720));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
-	ADD_RESOURCE("Play", CImage::CreateImage("Image/‰¼‚R.png"));
+	ADD_RESOURCE("Play", CImage::CreateImage("Image/‰¼4.png"));
+	ADD_RESOURCE("Teki", CImage::CreateImage("Image/“G.png"));
 	SOUND("BGM_Title")->Load("Sound/BGM/bouken1.wav");
 	SOUND("BGM_Game")->Load("Sound/BGM/bouken2.wav");
 	SOUND("BGM_Title")->Play(true);

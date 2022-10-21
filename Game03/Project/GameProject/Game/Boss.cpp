@@ -1,4 +1,4 @@
-#include "Boy.h"
+#include "Boss.h"
 #include "AnimData.h"
 #include "Field.h"
 #include "Effect.h"
@@ -6,13 +6,15 @@
 #include "Slash.h"
 #include"GameData.h"
 
-void Boy::StateIdle()
+void Boss::StateIdle()
 {
-	// 移動量
-	const float move_speed = 1;
-	// 移動フラグ
+
+	const float move_speed = 2;
+
 	bool move_flag = false;
-	// プレイヤーを検索
+
+	//const float jump_pow = 12;
+
 	Base* player = Base::FindObject(eType_Player);
 
 	if (player) {
@@ -35,9 +37,9 @@ void Boy::StateIdle()
 	}
 }
 
-Boy::Boy(const CVector2D& p, bool flip):Base(eType_Boy) 
+Boss::Boss(const CVector2D& p, bool flip) :Base(eType_Boss)
 {
-    m_img = COPY_RESOURCE("Boy", CImage);
+	m_img = COPY_RESOURCE("Boss", CImage);
 
 	m_img.ChangeAnimation(0);
 
@@ -51,10 +53,10 @@ Boy::Boy(const CVector2D& p, bool flip):Base(eType_Boy)
 
 	m_flip = flip;
 
-	m_hp = 100;
+	m_hp = 250;	// 5回
 	m_cnt = 300;
 }
-void Boy::Update() 
+void Boss::Update()
 {
 	m_vec.y += GRAVITY;
 	m_pos += m_vec;
@@ -64,19 +66,19 @@ void Boy::Update()
 	m_img.UpdateAnimation();
 
 }
-void Boy::Draw() {
+void Boss::Draw() {
 	m_img.SetPos(GetScreenPos(m_pos));
 
 	m_img.SetFlipH(m_flip);
 
-	m_img.SetSize(128,128);
+	m_img.SetSize(128, 128);
 
 	m_img.Draw();
 
 	DrawRect();
 }
-	
-void Boy::Collision(Base* b)
+
+void Boss::Collision(Base* b)
 {
 	switch (b->m_type) {
 	case eType_Player_Attack:
@@ -88,7 +90,7 @@ void Boy::Collision(Base* b)
 				m_hp -= 50;
 				if (m_hp <= 0) {
 					SetKill();
-					GameData::s_score += 50;
+					GameData::s_score += 200;
 				}
 			}
 		}

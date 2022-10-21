@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\AnimData.cpp" />
+    <ClCompile Include="Game\Boss.cpp" />
     <ClCompile Include="Game\Boy.cpp" />
     <ClCompile Include="Game\Effect.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
@@ -29,11 +30,13 @@
     <ClCompile Include="Title\GameClear.cpp" />
     <ClCompile Include="Title\GameOver.cpp" />
     <ClCompile Include="Title\Play.cpp" />
+    <ClCompile Include="Title\Teki.cpp" />
     <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\AnimData.h" />
+    <ClInclude Include="Game\Boss.h" />
     <ClInclude Include="Game\Boy.h" />
     <ClInclude Include="Game\Effect.h" />
     <ClInclude Include="Game\Enemy.h" />
@@ -49,6 +52,7 @@
     <ClInclude Include="Title\GameClear.h" />
     <ClInclude Include="Title\GameOver.h" />
     <ClInclude Include="Title\Play.h" />
+    <ClInclude Include="Title\Teki.h" />
     <ClInclude Include="Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

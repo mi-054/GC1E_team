@@ -1,5 +1,6 @@
 #include "Play.h"
 #include "../Game/Game.h"
+#include"Teki.h"
 
 
 Play::Play():Base(eType_Scene)
@@ -14,7 +15,7 @@ Play::~Play()
 	SOUND("BGM_Title")->Stop();
 	SOUND("BGM_Game")->Play(true);
 	Base::KillAll();
-	Base::Add(new Game());
+	Base::Add(new Teki());
 }
 
 void Play::Update()
