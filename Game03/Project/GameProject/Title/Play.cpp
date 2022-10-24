@@ -12,8 +12,7 @@ Play::Play():Base(eType_Scene)
 
 Play::~Play()
 {
-	SOUND("BGM_Title")->Stop();
-	SOUND("BGM_Game")->Play(true);
+	
 	Base::KillAll();
 	Base::Add(new Teki());
 }

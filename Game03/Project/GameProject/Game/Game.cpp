@@ -25,12 +25,12 @@ Game::Game():Base(eType_Scene)
 	Base::Add(new Boy(CVector2D(900 + 400 * 1, 540), false));
 	Base::Add(new Boy(CVector2D(900 + 400 * 2, 540), false));
 	Base::Add(new Boy(CVector2D(900 + 400 * 3, 540), false));
-	Base::Add(new RBoy(CVector2D(1000 + 400 * 1, 540), false));
+	//Base::Add(new RBoy(CVector2D(1000 + 400 * 1, 540), false));
 	Base::Add(new RBoy(CVector2D(1000 + 400 * 2, 540), false));
 	Base::Add(new RBoy(CVector2D(1000 + 400 * 3, 540), false));
 	Base::Add(new Boss(CVector2D(1000 + 400 * 5, 540), false));
 
-	Base::Add(new Goal(CVector2D(2048, 540 - 32)));
+	Base::Add(new Goal(CVector2D(3000, 540 - 64)));
 	Base::Add(new UI());
 	
 
@@ -49,9 +49,11 @@ Game::~Game()
 
 void Game::Update()
 {
+
 	//ƒS[ƒ‹‚ª–³‚¯‚ê‚ÎƒQ[ƒ€ƒV[ƒ“I—¹
 	if (!Base::FindObject(eType_Goal)) {
 		if (GameClear_flag == false) {
+
 			//ˆê“x‚¾‚¯ŒÄ‚Ño‚·
 			Base::Add(new GameClear);
 		}
@@ -73,12 +75,12 @@ void Game::Update()
 
 	}
 
-	else if (++t2 == 120 * 60) {
+	else if (++t2 == 60 * 60) {
 		//120•bŒã‚Éˆê“x‚¾‚¯ŒÄ‚Ño‚µ
 		Base::Add(new GameOver);
 	}
 	//121•bˆÈ~—LŒø
-	else if (t2>=121*60&&(PUSH(CInput::eButton1))){
+	else if (t2>=61*60&&(PUSH(CInput::eButton1))){
 			SetKill();
 
 	}

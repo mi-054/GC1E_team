@@ -36,6 +36,9 @@ public:
 	int m_type;
 	// ƒLƒ‹”»’è
 	bool m_kill;
+
+
+	bool m_hit;
 	// ”¼Œa
 	float m_rad;
 	// ’ZŒ`

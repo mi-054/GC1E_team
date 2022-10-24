@@ -30,7 +30,7 @@ enum  {
 	eAnimExtAttack02End,
 	eAnimStep,
 };
-
+#pragma region アニメーションデータ
 //プレイヤーのアニメーションデータ
 extern TexAnimData player_anim_data[];
 //敵のアニメーションデータ
@@ -42,3 +42,5 @@ extern TexAnimData effect_slash_anim_data[];
 extern TexAnimData effect_bomb_anim_data[];
 extern TexAnimData Title_anim_data[];
 extern TexAnimData Goal_anim_data[];
+#pragma endregion
+

@@ -62,7 +62,7 @@ void Player::StateIdle()
 void Player::StateAttack()
 {
 	// 攻撃アニメーションへ変更
-	m_img.ChangeAnimation(eAnimExtAttack01, false);
+	m_img.ChangeAnimation(eAnimAttack01, false);
 	// 3番目のパターンなら
 	if (m_img.GetIndex() == 3) {
 		if (m_flip) {
@@ -122,11 +122,19 @@ Player::Player(const CVector2D& p, bool flip):Base(eType_Player)
 	// ダメージ番号
 	m_damage_no = -1;
 	// ヒットポイント
-	m_hp = 100;
+	m_hp = 1500;
+	
+	m_hit = false;
+
+	m_cnt = 0;
 }
 
 void Player::Update()
 {
+	m_cnt--;
+	if (m_cnt <= 0) {
+		m_hit = false;
+	}
 	m_pos_old = m_pos;
 	switch (m_state){
 	// 通常状態
@@ -174,7 +182,7 @@ void Player::Draw()
 	// 描画
 	m_img.Draw();
 	// 当たり判定矩形の表示
-	DrawRect();
+	//DrawRect();
 }
 
 void Player::Collision(Base* b)
@@ -182,8 +190,10 @@ void Player::Collision(Base* b)
 	switch (b->m_type) {
 	//ゴール判定
 	case eType_Goal:
-		if (Base::CollisionRect(this, b)) {
-			b->SetKill();
+		if (!Base::FindObject(eType_Boy)&& !Base::FindObject(eType_RBoy)&& !Base::FindObject(eType_Boss)) {
+			if (Base::CollisionRect(this, b)) {
+				b->SetKill();
+			}
 		}
 		break;
 
@@ -195,6 +205,8 @@ void Player::Collision(Base* b)
 				// 同じ攻撃の連続ダメージ防止
 				m_damage_no = s->GetAttackNo();
 				m_hp -= 50;
+				m_hit = true;
+				m_cnt = 180;
 				if (m_hp <= 0) {
 					m_state = eState_Down;
 				} else {

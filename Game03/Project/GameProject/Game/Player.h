@@ -18,6 +18,8 @@ private:
 	bool m_flip;
 	// 着地フラグ
 	bool m_is_ground;
+	
+	int m_cnt;
 	// 攻撃番号
 	int m_attack_no;
 	// ダメージ番号

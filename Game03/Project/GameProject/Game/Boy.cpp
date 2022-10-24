@@ -33,7 +33,7 @@ void Boy::StateIdle()
 			m_flip = false;
 			move_flag = true;
 		}
-		else {
+		else if(m_hit_player==false) {
 			//UŒ‚ó‘Ô‚ÖˆÚs
 			m_state = eState_Attack;
 			m_attack_no++;
@@ -123,11 +123,17 @@ Boy::Boy(const CVector2D& p, bool flip):Base(eType_Boy)
 
 	m_flip = flip;
 
+	m_hit_player = false;
+
 	m_hp = 100;
 	m_cnt = 300;
 }
 void Boy::Update() 
 {
+	if (!p)
+		p = dynamic_cast<Player*>(Base::FindObject(eType_Player));
+	m_hit_player = p->m_hit;
+		
 	switch (m_state) {
 		//’Êíó‘Ô
 	case eState_Idle:
@@ -169,7 +175,7 @@ void Boy::Draw() {
 
 	m_img.Draw();
 
-	DrawRect();
+	//DrawRect();
 }
 	
 void Boy::Collision(Base* b)
@@ -185,6 +191,9 @@ void Boy::Collision(Base* b)
 				if (m_hp <= 0) {
 					SetKill();
 					GameData::s_score += 50;
+				}
+				else {
+					m_state = eState_Damage;
 				}
 			}
 		}

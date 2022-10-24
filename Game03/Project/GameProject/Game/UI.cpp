@@ -8,7 +8,7 @@
 UI::UI():Base(eType_UI)
 {
 	m_img.Load("Image/UI.png");
-	time = 71*60;
+	time = 61*60;
 }
 
 void UI::Draw()
@@ -24,7 +24,7 @@ void UI::Draw()
 	time -= 1;
 	
 	int t = time / 60;
-	if (time == 61 * 60) {
+	if (time == 31 * 60) {
 		Base::Add(new Hametu());
 
 	}

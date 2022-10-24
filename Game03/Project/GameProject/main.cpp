@@ -84,7 +84,7 @@ void Init(void)
 	ADD_RESOURCE("Effect_Slash", CImage::CreateImage("Image/Effect_Slash.png",effect_slash_anim_data,128,128));
 	ADD_RESOURCE("Effect_Smoke", CImage::CreateImage("Image/Effect_Smoke.png", effect_smoke_anim_data, 128, 128));
 	ADD_RESOURCE("Effect_Blood", CImage::CreateImage("Image/Effect_Blood.png", effect_blood_anim_data, 128, 128));
-	ADD_RESOURCE("Goal", CImage::CreateImage("Image/ゴール.png",Goal_anim_data,32,64));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/ゴール.png",Goal_anim_data,32*2,64*2));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title6.png",Title_anim_data,1280,720));
 	ADD_RESOURCE("UI", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Hametu", CImage::CreateImage("Image/Hametu.png"));
@@ -94,9 +94,12 @@ void Init(void)
 	SOUND("BGM_Game")->Load("Sound/BGM/bouken2.wav");
 	SOUND("BGM_Title")->Play(true);
 	SOUND("SE_注意")->Load("SOUND/SE/注意.wav");
+	SOUND("SE_clear")->Load("SOUND/SE/game-clear.wav");
+	SOUND("SE_bame")->Load("SOUND/SE/game-over.wav");
+
 	//ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
 	//ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear.png"));
-	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over2.png"));
+	ADD_RESOURCE("GameOver", CImage::CreateImage("Image/Game Over.png"));
 	ADD_RESOURCE("GameClear", CImage::CreateImage("Image/Game Clear2.png"));
 	// プレイヤーの生成
 	//Base::Add(new Player(CVector2D(200, 500), false));

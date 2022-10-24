@@ -8,7 +8,8 @@ Teki::Teki():Base(eType_Scene)
 
 Teki::~Teki()
 {
-	
+	SOUND("BGM_Title")->Stop();
+	SOUND("BGM_Game")->Play(true);
 	Base::KillAll();
 	Base::Add(new Game());
 }

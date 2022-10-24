@@ -1,6 +1,6 @@
 #pragma once
 #include "../Base/Base.h"
-
+#include "../Game/Player.h"
 class Boy :public Base {
 private:
 	enum {
@@ -11,6 +11,7 @@ private:
 		eState_Down,
 		
 	};
+	Player* p;
 	//状態変数
 	int m_state;
 	int m_cnt;
@@ -19,6 +20,7 @@ private:
 	bool m_flip;
 	//着地フラグ
 	bool m_is_ground;
+	bool m_hit_player;
 	//攻撃番号
 	int m_attack_no;
 	// ダメージ番号
